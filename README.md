@@ -124,4 +124,88 @@ grub-mkconfig -o /boot/grub/grub.cfg
 reboot
 
 echo "fs.inotify.max_user_watches=262144" > /etc/sysctl.d/40-max-user-watches.conf
+
+pacman -Sg gnome
+# gnome baobab
+# gnome cheese
+# gnome eog
+# gnome epiphany
+# gnome evince
+# gnome file-roller
+# gnome gdm
+# gnome gedit
+# gnome gnome-backgrounds
+# gnome gnome-books
+# gnome gnome-calculator
+# gnome gnome-calendar
+# gnome gnome-characters
+# gnome gnome-clocks
+# gnome gnome-color-manager
+# gnome gnome-contacts
+# gnome gnome-control-center
+# gnome gnome-dictionary
+# gnome gnome-disk-utility
+# gnome gnome-documents
+# gnome gnome-font-viewer
+# gnome gnome-getting-started-docs
+# gnome gnome-keyring
+# gnome gnome-logs
+# gnome gnome-maps
+# gnome gnome-menus
+# gnome gnome-music
+# gnome gnome-photos
+# gnome gnome-remote-desktop
+# gnome gnome-screenshot
+# gnome gnome-session
+# gnome gnome-settings-daemon
+# gnome gnome-shell
+# gnome gnome-shell-extensions
+# gnome gnome-system-monitor
+# gnome gnome-terminal
+# gnome gnome-themes-extra
+# gnome gnome-todo
+# gnome gnome-user-docs
+# gnome gnome-user-share
+# gnome gnome-video-effects
+# gnome gnome-weather
+# gnome grilo-plugins
+# gnome gvfs
+# gnome gvfs-afc
+# gnome gvfs-goa
+# gnome gvfs-google
+# gnome gvfs-gphoto2
+# gnome gvfs-mtp
+# gnome gvfs-nfs
+# gnome gvfs-smb
+# gnome mousetweaks
+# gnome mutter
+# gnome nautilus
+# gnome networkmanager
+# gnome orca
+# gnome rygel
+# gnome sushi
+# gnome totem
+# gnome tracker
+# gnome tracker-miners
+# gnome vino
+# gnome xdg-user-dirs-gtk
+# gnome yelp
+# gnome gnome-boxes
+# gnome gnome-software
+# gnome simple-scan
+
+pacman -S baobab eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-characters gnome-clocks gnome-control-center gnome-disk-utility gnome-font-viewer gnome-session gnome-shell gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra mutter networkmanager simple-scan
+
+systemctl enable gdm
+
+reboot
+
+pacman -Sg gnome-extra
+pacman -S gnome-tweaks gnome-usage
+pacman -S thunar sakura vlc
+
+# Log-in screen logo
+# Copy arch-crystal-white.png to /usr/share/pixmaps
+echo "[org/gnome/login-screen]" > /etc/dconf/db/gdm.d/01-logo
+echo "  logo='/usr/share/pixmaps/arch-crystal-white.png'" >> /etc/dconf/db/gdm.d/01-logo
 ```
