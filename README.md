@@ -29,7 +29,8 @@ mkfs.fat -F32 /dev/sda1
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
-pacstrap /mnt base linux
+# www.archlinux.org/news/base-group-replaced-by-mandatory-base-package-manual-intervention-required/
+pacstrap /mnt base linux linux-firmware nano
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
